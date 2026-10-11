@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rukia Ramadhani Butenge — Education Leader &amp; Digital Inclusion Advocate</title>
+<meta name="description" content="Education leader, CEO and digital skills trainer in Dar es Salaam, Tanzania. Advocate for girls' rights, safe schools and disability-inclusive digital access.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07131f;
+    --text: #EEF1F5;
+    --text-dim: #B3BFD0;
+    --text-faint: #8794AA;
+    --glass: rgba(12, 28, 44, 0.62);
+    --line: rgba(255,255,255,0.09);
+    --amber: #F0B35A;
+    --amber-dim: rgba(240,179,90,0.18);
+    --teal: #6CC3CF;
+    --teal-dim: rgba(108,195,207,0.16);
+    --green: #6FCF9B;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  body.locked { overflow: hidden; }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+  a { color: var(--amber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  button { font-family: inherit; }
+  a:focus-visible, button:focus-visible, .card:focus-visible, .gallery-item:focus-visible, .wall-tile:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Animated waves ---------- */
+  .bg {
+    position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+    background: linear-gradient(180deg, #07131f 0%, #0a2234 52%, #0c3040 100%);
+  }
+  .wave { position: absolute; left: 0; width: 200%; bottom: 0; }
+  .wave svg { display: block; width: 100%; height: 100%; }
+  .w1 { height: 52vh; animation: waveL 40s linear infinite; }
+  .w2 { height: 44vh; bottom: -2vh; animation: waveR 56s linear infinite; }
+  .w3 { height: 38vh; bottom: -4vh; animation: waveL 78s linear infinite; }
+  .w4 { height: 30vh; bottom: -6vh; animation: waveR 96s linear infinite; }
+  @keyframes waveL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes waveR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+
+  /* ---------- Avatar ---------- */
+  .avatar {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--amber);
+    background: #12263b;
+    display: grid;
+    place-items: center;
+    font-family: var(--serif);
+    font-weight: 500;
+    color: var(--amber);
+    flex-shrink: 0;
+  }
+  .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .avatar-sm { width: 36px; height: 36px; border-radius: 50%; font-size: 0.85rem; border-width: 1.5px; }
+  .avatar-lg {
+    width: 170px; height: 210px;
+    border-radius: 85px 85px 30px 30px;
+    font-size: 2.8rem;
+    box-shadow: 0 0 0 7px var(--amber-dim), 0 24px 50px rgba(0,0,0,0.45);
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(7,19,31,0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 10px 28px; max-width: 1100px; margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
+  .brand strong { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; }
+  .brand small { color: var(--text-faint); font-size: 0.85rem; }
+  .topnav { display: flex; gap: 22px; font-size: 0.95rem; }
+  .topnav a { color: var(--text-dim); }
+  .topnav a:hover { color: var(--amber); text-decoration: none; }
+  @media (max-width: 860px) { .topnav { display: none; } }
+  @media (max-width: 440px) { .brand small { display: none; } }
+
+  /* ---------- Hero with photo wall ---------- */
+  .hero { position: relative; z-index: 2; padding-top: 28px; }
+  .photo-wall {
+    max-width: 1100px; margin: 0 auto; padding: 0 20px;
+    height: 340px;
+    display: flex; align-items: flex-end; gap: 14px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 38%, transparent 96%);
+    mask-image: linear-gradient(to bottom, #000 38%, transparent 96%);
+  }
+  .wall-tile {
+    flex: 1; min-width: 0;
+    position: relative; overflow: hidden;
+    border: 0; padding: 0;
+    border-radius: 24px;
+    background: linear-gradient(160deg, #1d3c55, #0f2639);
+    cursor: zoom-in;
+    animation: floaty 9s ease-in-out infinite alternate;
+  }
+  .wall-tile:nth-child(1) { height: 210px; border-radius: 999px 999px 24px 24px; animation-duration: 10s; }
+  .wall-tile:nth-child(2) { height: 270px; animation-duration: 8s; animation-delay: -2s; }
+  .wall-tile:nth-child(3) { height: 330px; border-radius: 999px 999px 24px 24px; animation-duration: 11s; animation-delay: -4s; }
+  .wall-tile:nth-child(4) { height: 245px; animation-duration: 9s; animation-delay: -1s; }
+  .wall-tile:nth-child(5) { height: 295px; border-radius: 999px 999px 24px 24px; animation-duration: 12s; animation-delay: -5s; }
+  .wall-tile:nth-child(6) { height: 215px; animation-duration: 10s; animation-delay: -3s; }
+  @keyframes floaty { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+  .wall-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .wall-tile:hover img { transform: scale(1.07); }
+  .wall-tile.empty { cursor: default; }
+  .wall-tile .ph {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    color: var(--text-faint); font-size: 0.85rem;
+  }
+  .wall-tile .ph b { font-family: var(--serif); font-weight: 400; font-size: 1.8rem; color: var(--amber); line-height: 1; }
+  @media (max-width: 760px) {
+    .photo-wall { overflow-x: auto; scroll-snap-type: x mandatory; height: 270px; scrollbar-width: none; }
+    .photo-wall::-webkit-scrollbar { display: none; }
+    .wall-tile { flex: 0 0 150px; scroll-snap-align: center; }
+    .wall-tile:nth-child(n) { height: 220px; }
+    .wall-tile:nth-child(odd) { height: 260px; }
+  }
+
+  .hero-content {
+    max-width: 920px; margin: -36px auto 0; padding: 0 28px;
+    position: relative; z-index: 3;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
+    animation: rise .9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 700px) {
+    .hero-content { grid-template-columns: 1fr; gap: 24px; margin-top: -20px; }
+    .avatar-lg { width: 130px; height: 160px; border-radius: 65px 65px 24px 24px; font-size: 2.2rem; }
+  }
+  .hero-role { color: var(--teal); font-size: 1.02rem; font-weight: 600; margin-bottom: 8px; }
+  .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 12px; }
+  .tagline { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(1.15rem, 2.4vw, 1.5rem); color: var(--amber); margin-bottom: 18px; }
+  .lede { max-width: 58ch; color: var(--text-dim); font-size: 1.05rem; margin-bottom: 26px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    font-size: 0.95rem; font-weight: 700;
+    padding: 12px 24px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    display: inline-flex; align-items: center;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-2px); }
+  .btn-primary { background: var(--amber); border-color: var(--amber); color: #1d1405; }
+  .btn-primary:hover { background: #f6c47c; }
+  .btn-ghost { color: var(--text); }
+  .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 76px 0 8px; }
+  .section-title { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin-bottom: 8px; }
+  .section-hint { font-style: italic; color: var(--text-faint); font-size: 0.98rem; margin-bottom: 30px; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; margin-top: 26px; }
+  @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text p { color: var(--text-dim); margin-bottom: 16px; max-width: 58ch; }
+  .about-text strong { color: var(--text); font-weight: 600; }
+  .readout {
+    border: 1px solid var(--line); border-radius: 22px; background: var(--glass);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 12px 22px; align-self: start; font-size: 0.97rem;
+  }
+  .readout .row { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); color: var(--text-faint); }
+  .readout .row:last-child { border-bottom: none; }
+  .readout .row span:last-child { color: var(--text); text-align: right; }
+
+  /* ---------- Cards ---------- */
+  .grid-2, .grid-3 { display: grid; gap: 18px; align-items: start; }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 800px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+  .sub-label { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--text-dim); margin: 40px 0 16px; }
+
+  .card {
+    position: relative;
+    border: 1px solid var(--line); border-radius: 22px; background: var(--glass);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 20px 22px; cursor: pointer;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .card:hover, .card:focus-visible {
+    transform: translateY(-5px);
+    border-color: rgba(240,179,90,0.65);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  }
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .card h3 { font-size: 1.1rem; line-height: 1.3; font-weight: 600; margin-bottom: 2px; }
+  .card .org { font-size: 0.88rem; color: var(--text-faint); margin-bottom: 8px; }
+  .card .summary { color: var(--text-dim); font-size: 0.97rem; }
+  .peek { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .35s ease, opacity .3s ease, margin-top .35s ease; }
+  .card:hover .peek, .card:focus-visible .peek { max-height: 190px; opacity: 1; margin-top: 12px; }
+  .peek p { font-size: 0.95rem; color: var(--text); padding-top: 12px; border-top: 1px solid var(--line); }
+  .peek .more { display: inline-block; margin-top: 8px; font-size: 0.88rem; font-weight: 700; color: var(--amber); }
+  @media (hover: none) { .peek { max-height: none; opacity: 1; margin-top: 12px; } }
+
+  .chip { font-size: 0.76rem; font-weight: 700; white-space: nowrap; padding: 3px 11px; border-radius: 999px; flex-shrink: 0; }
+  .chip-current { background: rgba(111,207,155,0.18); color: var(--green); }
+  .chip-past { background: var(--teal-dim); color: var(--teal); }
+  .chip-when { background: var(--amber-dim); color: var(--amber); }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+  .tag { font-size: 0.8rem; color: var(--text-dim); border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; }
+
+  /* ---------- Detail pop-up ---------- */
+  .modal {
+    display: none; position: fixed; inset: 0; z-index: 100;
+    background: rgba(4,10,18,0.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    align-items: center; justify-content: center; padding: 24px 16px; perspective: 1400px;
+  }
+  .modal.open { display: flex; }
+  .modal-card {
+    position: relative; width: 100%; max-width: 660px; max-height: 86vh; overflow-y: auto;
+    background: #0f2234; border: 1px solid rgba(240,179,90,0.6); border-radius: 28px;
+    padding: 32px 32px 34px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 7px var(--amber-dim);
+    animation: flipIn .6s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes flipIn {
+    0% { transform: rotateY(-100deg) scale(.7); opacity: 0; }
+    60% { opacity: 1; }
+    100% { transform: rotateY(0deg) scale(1); opacity: 1; }
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    font-size: 0.85rem; font-weight: 700; color: var(--text-dim);
+    background: transparent; border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 16px; cursor: pointer;
+  }
+  .modal-close:hover { color: var(--amber); border-color: var(--amber); }
+  .modal-head { padding-right: 90px; margin-bottom: 20px; }
+  .modal-head h2 { font-size: 1.5rem; line-height: 1.25; font-weight: 600; margin-bottom: 4px; }
+  .modal-head .org { font-size: 0.92rem; color: var(--text-faint); margin-bottom: 10px; }
+  .modal-body p { color: var(--text-dim); font-size: 1.02rem; margin-bottom: 14px; }
+  .modal-body h4 { font-size: 1.05rem; font-weight: 600; color: var(--teal); margin: 20px 0 8px; }
+  .modal-body ul { list-style: none; margin-bottom: 8px; }
+  .modal-body li { color: var(--text-dim); font-size: 1rem; padding: 9px 0 9px 20px; border-bottom: 1px solid var(--line); position: relative; }
+  .modal-body li:last-child { border-bottom: none; }
+  .modal-body li::before { content: ""; position: absolute; left: 0; top: 19px; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+  .modal-body li strong { color: var(--text); font-weight: 600; }
+
+  /* ---------- Documentary gallery ---------- */
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 460px) { .gallery-grid { grid-template-columns: 1fr; } }
+  .gallery-item {
+    position: relative; border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
+    background: var(--glass); cursor: zoom-in; aspect-ratio: 4 / 5;
+  }
+  .gallery-item img, .gallery-item video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+  .gallery-item:hover img, .gallery-item:hover video { transform: scale(1.05); }
+  .gallery-item .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 16px 14px; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); font-size: 0.9rem; }
+  .gallery-item .kind { position: absolute; top: 10px; right: 10px; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: rgba(0,0,0,0.55); color: var(--amber); }
+  .gallery-item.placeholder {
+    cursor: default; border-style: dashed;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    text-align: center; padding: 22px; color: var(--text-faint); font-size: 0.92rem;
+  }
+  .gallery-item.placeholder b { font-family: var(--serif); font-weight: 400; font-size: 2rem; color: var(--amber); line-height: 1; }
+
+  /* ---------- Full-screen viewer ---------- */
+  .viewer {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(3,8,14,0.97);
+    align-items: center; justify-content: center;
+  }
+  .viewer.open { display: flex; }
+  .viewer-stage { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 64px 70px 70px; }
+  .viewer-stage img, .viewer-stage video {
+    max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px;
+    animation: zoomIn .4s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .viewer-stage iframe { width: min(100%, 1100px); aspect-ratio: 16 / 9; border: 0; border-radius: 10px; }
+  @keyframes zoomIn { from { transform: scale(.82); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .viewer-top { position: absolute; top: 16px; right: 18px; display: flex; gap: 10px; z-index: 2; }
+  .v-btn, .v-nav {
+    background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px; cursor: pointer; font-weight: 700; font-size: 0.88rem;
+  }
+  .v-btn { padding: 8px 18px; }
+  .v-btn:hover, .v-nav:hover { background: rgba(240,179,90,0.25); border-color: var(--amber); }
+  .v-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; font-size: 1.6rem; line-height: 1; z-index: 2; }
+  .v-prev { left: 14px; } .v-next { right: 14px; }
+  .viewer-cap { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; color: var(--text-dim); font-size: 0.95rem; padding: 0 70px; }
+  .viewer-cap small { display: block; color: var(--text-faint); margin-top: 2px; }
+  @media (max-width: 600px) { .viewer-stage { padding: 64px 12px 80px; } .v-nav { width: 40px; height: 40px; } .viewer-cap { padding: 0 16px; } }
+
+  /* ---------- Footer landscape ---------- */
+  footer { position: relative; z-index: 2; margin-top: 30px; padding-top: 250px; overflow: hidden; color: #dfe9e6; }
+  .scene { position: absolute; inset: 0; z-index: 0; }
+  .scene svg { display: block; width: 100%; height: 100%; }
+  .footer-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 62%; z-index: 1; background: linear-gradient(to top, rgba(4,15,13,0.9) 0%, rgba(4,15,13,0.62) 55%, transparent 100%); }
+  .footer-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 0 28px 28px; }
+  .footer-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto minmax(230px, auto); gap: 34px; align-items: start; }
+  .fcol h4 { font-size: 1.08rem; font-weight: 600; color: #fff; padding-bottom: 8px; margin-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.75); }
+  .fcol a { display: block; color: #dfe9e6; font-size: 0.97rem; padding: 3px 0; }
+  .fcol a:hover { color: var(--amber); text-decoration: none; }
+  .social { display: flex; gap: 12px; align-self: center; }
+  .social a { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.85); display: grid; place-items: center; color: #fff; transition: background .2s ease, color .2s ease, transform .2s ease; }
+  .social a:hover { background: var(--amber); color: #1d1405; border-color: var(--amber); transform: translateY(-3px); }
+  .fcontact { text-align: right; }
+  .fcontact strong { display: block; font-family: var(--serif); font-size: 1.45rem; font-weight: 600; color: #fff; margin-bottom: 8px; }
+  .fcontact span, .fcontact a { display: flex; justify-content: flex-end; align-items: center; gap: 8px; color: #dfe9e6; font-size: 0.95rem; padding: 2px 0; }
+  .fcontact a:hover { color: var(--amber); text-decoration: none; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 46px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 0.88rem; color: #b9c8c4; }
+  .footer-bottom .wordmark { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: #fff; }
+  .footer-bottom a { color: #dfe9e6; }
+  @media (max-width: 960px) {
+    footer { padding-top: 230px; }
+    .footer-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .social { grid-column: 1 / -1; justify-content: flex-start; }
+    .fcontact { grid-column: 1 / -1; text-align: left; }
+    .fcontact span, .fcontact a { justify-content: flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wave, .wall-tile, .hero-content, .modal-card, .viewer-stage img, .viewer-stage video { animation: none; }
+    .card, .peek, .wall-tile img, .gallery-item img, .gallery-item video { transition: none; }
+    .card:hover, .card:focus-visible { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"><div class="wave w1"><svg viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,150 C240,95 480,205 720,150 C960,95 1200,205 1440,150 C1680,95 1920,205 2160,150 C2400,95 2640,205 2880,150 L2880,320 L0,320 Z" fill="rgba(108,195,207,.12)"/></svg></div><div class="wave w2"><svg viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,165 C160,125 320,205 480,165 C640,125 800,205 960,165 C1120,125 1280,205 1440,165 C1600,125 1760,205 1920,165 C2080,125 2240,205 2400,165 C2560,125 2720,205 2880,165 L2880,320 L0,320 Z" fill="rgba(96,125,214,.12)"/></svg></div><div class="wave w3"><svg viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,175 C480,113 960,237 1440,175 C1920,113 2400,237 2880,175 L2880,320 L0,320 Z" fill="rgba(240,179,90,.05)"/></svg></div><div class="wave w4"><svg viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,195 C120,169 240,221 360,195 C480,169 600,221 720,195 C840,169 960,221 1080,195 C1200,169 1320,221 1440,195 C1560,169 1680,221 1800,195 C1920,169 2040,221 2160,195 C2280,169 2400,221 2520,195 C2640,169 2760,221 2880,195 L2880,320 L0,320 Z" fill="rgba(170,225,240,.07)"/></svg></div></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="avatar avatar-sm"><span>RB</span><img src="assets/rukia.jpg" alt="Rukia Ramadhani Butenge" onerror="this.remove()"></div>
+      <strong>Rukia Butenge</strong> <small>education and digital inclusion</small>
+    </div>
+    <nav class="topnav">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#experience">Experience</a>
+      <a href="#training">Training</a>
+      <a href="#education">Education</a>
+      <a href="#documentary">Documentary</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="photo-wall" id="photoWall" aria-label="Photo gallery. Select a photo to view it full screen."></div>
+  <div class="hero-content">
+    <div class="avatar avatar-lg"><span>RB</span><img src="assets/rukia.jpg" alt="Portrait of Rukia Ramadhani Butenge" onerror="this.remove()"></div>
+    <div>
+      <p class="hero-role">Education leader, CEO, project manager and digital skills trainer</p>
+      <h1>Rukia Ramadhani Butenge</h1>
+      <p class="tagline">Leading safe, inclusive, digital learning.</p>
+      <p class="lede">Education leader in Dar es Salaam, Tanzania, with experience across school leadership, project management, ICT teaching, STEM supervision and community outreach. I advocate for girls' rights, safe schools and youth empowerment, and I work to make sure girls with disabilities are not left behind in the digital world.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#experience">View experience</a>
+        <a class="btn btn-ghost" href="mailto:butengerukia123@gmail.com">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+<section id="about">
+    <h2 class="section-title">Who I am</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p><strong>I bring education leadership, corporate leadership, project management and digital innovation together.</strong> I have guided teachers, learners, schools, foundations and technology-focused programs, and I turn digital tools and emerging technology into practical classroom and community solutions.</p>
+        <p>I advocate for girls' rights, safe schools and youth empowerment through <strong>Shule Salama</strong> and related initiatives, promoting protective, inclusive, confidence-building learning environments. I mentor girls with disabilities to take part confidently, hold visible roles and feel equally valued alongside their peers.</p>
+        <p>Day to day, I coordinate education and technology programs, support teachers in using interactive digital tools, and promote digital entrepreneurship for children. Classroom expertise, strategic leadership, partnership engagement and practical delivery all come with me.</p>
+      </div>
+      <div class="readout">
+        <div class="row"><span>base</span><span>Dar es Salaam, TZ</span></div>
+        <div class="row"><span>leads</span><span>WazoNexa Innovations</span></div>
+        <div class="row"><span>education</span><span>BA Language &amp; Management</span></div>
+        <div class="row"><span>university</span><span>Mzumbe University</span></div>
+        <div class="row"><span>teaching since</span><span>2013</span></div>
+        <div class="row"><span>languages</span><span>English, Swahili</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOCUS ===================== -->
+  <section id="focus">
+    <h2 class="section-title">Where I work</h2>
+    <p class="section-hint">Hover for a quick look. Click a card for the full details.</p>
+    <div class="grid-2">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><h3>Education Leadership</h3><span class="chip chip-current">active</span></div>
+        <p class="summary">School leadership, academic coordination and data-driven planning.</p>
+        <div class="peek"><p>Deputy Head of School, school data analyst, STEM supervisor and English teacher.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>From the classroom to the deputy head's office, my work centres on running schools well and using evidence to plan and decide.</p>
+          <h4>What this covers</h4>
+          <ul>
+            <li><strong>Deputy Head of School</strong>, Kijitonyama Sayansi Secondary School (2020 – 2025): supported school leadership, discipline, academic coordination and daily institutional operations.</li>
+            <li><strong>School Data Analyst, English Teacher, STEM Supervisor</strong>, same school (2020 – present), plus School Plans Teacher and Extracurricular and Practical Skills Teacher.</li>
+            <li><strong>NECTA Marker</strong> (2023): national examination marking with attention to fairness, accuracy and assessment standards.</li>
+            <li><strong>Teaching since 2013</strong>, across Accounting, English and ICT.</li>
+          </ul>
+          <div class="tag-row"><span class="tag">School leadership</span><span class="tag">STEM supervision</span><span class="tag">School data &amp; reporting</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><h3>Executive &amp; Project Management</h3><span class="chip chip-current">active</span></div>
+        <p class="summary">Setting direction, planning projects and keeping teams on outcomes.</p>
+        <div class="peek"><p>CEO of WazoNexa Innovations, Project Manager at Tech IQ, planning contributor at Delight Makers Foundation.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>I combine executive leadership with hands-on project delivery, from company strategy to the schedules and responsibilities that make a program run.</p>
+          <h4>What this covers</h4>
+          <ul>
+            <li><strong>Co-Founder and CEO</strong>, WazoNexa Innovations Company Limited (2025 – present).</li>
+            <li><strong>Project Manager</strong>, Tech IQ Company (2026 – present): activities, timelines, team responsibilities and stakeholder communication.</li>
+            <li><strong>Project Planning Contributor</strong>, Delight Makers Foundation (2026 – present): girls' empowerment programs.</li>
+            <li>Outreach and stakeholder engagement across schools, foundations and partners.</li>
+          </ul>
+          <div class="tag-row"><span class="tag">Strategy</span><span class="tag">Project delivery</span><span class="tag">Partnerships</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><h3>ICT &amp; Digital Skills Training</h3><span class="chip chip-current">active</span></div>
+        <p class="summary">Training girls, learners and teachers in digital skills and safe technology use.</p>
+        <div class="peek"><p>Smart Girls in ICT, TCRA train-the-trainers, ICT SEQUIP teacher training.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>I help learners and teachers get practical, confident use of technology, and I train others to do the same.</p>
+          <h4>What this covers</h4>
+          <ul>
+            <li><strong>Smart Girls in ICT / Girls in ICT</strong> (2022 – present): supervising and training girls and young learners in ICT, digital skills, safe technology use and innovation mindsets.</li>
+            <li><strong>TCRA Digital Inclusion</strong> (2025): train-the-trainers facilitator for Girls in ICT initiatives.</li>
+            <li><strong>ICT SEQUIP Training for Teachers</strong> (2025): teacher trainer on adopting digital tools in classroom practice.</li>
+            <li><strong>ICT and English Teacher</strong>, Kidudwe Primary School (2019 – 2020).</li>
+          </ul>
+          <div class="tag-row"><span class="tag">ICT teaching</span><span class="tag">Teacher training</span><span class="tag">Technology integration</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><h3>Girls' Rights &amp; Digital Inclusion</h3><span class="chip chip-current">active</span></div>
+        <p class="summary">Safe schools, girls' empowerment and disability-inclusive digital access.</p>
+        <div class="peek"><p>Shule Salama, mentoring girls with disabilities, and outreach for children's digital entrepreneurship.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>I promote protective, inclusive and confidence-building learning environments, and I make sure girls with disabilities can learn, contribute and lead alongside their peers.</p>
+          <h4>What this covers</h4>
+          <ul>
+            <li><strong>Shule Salama</strong> and related initiatives for girls' rights and safe schools.</li>
+            <li><strong>Disability-inclusive digital access</strong>: mentoring girls with disabilities to participate confidently and take visible roles.</li>
+            <li><strong>Delight Makers Foundation</strong>: planning support for Binti na Uongozi and Muongezee Binti Ujasiri.</li>
+            <li><strong>Faunda.AI</strong>: outreach for a digital entrepreneurship platform for children.</li>
+          </ul>
+          <div class="tag-row"><span class="tag">Safe schools</span><span class="tag">Girls' empowerment</span><span class="tag">Disability inclusion</span><span class="tag">Outreach</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience">
+    <h2 class="section-title">What I've led and delivered</h2>
+    <p class="section-hint">Hover for a quick look. Click a card for the full details.</p>
+    <div class="grid-2">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Co-Founder and Chief Executive Officer</h3><div class="org">WazoNexa Innovations Company Limited</div></div><span class="chip chip-current">2025 – present</span></div>
+        <p class="summary">Leading an innovation company for education, technology and digital learning.</p>
+        <div class="peek"><p>Sets strategic direction and guides product, partnership and business development priorities.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Co-founded and lead an innovation company developing education, technology and digital learning solutions.</p>
+          <p>I set strategic direction, coordinate operations and guide product, partnership and business development priorities. I represent the company in stakeholder engagements and align innovation projects with education and social impact.</p>
+          <div class="tag-row"><span class="tag">Leadership</span><span class="tag">Strategy</span><span class="tag">Business development</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Project Manager</h3><div class="org">Tech IQ Company</div></div><span class="chip chip-current">2026 – present</span></div>
+        <p class="summary">Planning and coordinating technology-related projects.</p>
+        <div class="peek"><p>Activities, timelines, team responsibilities and stakeholder communication.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Plan and coordinate technology-related projects, including activities, timelines, team responsibilities and stakeholder communication.</p>
+          <p>I monitor implementation progress, support issue resolution and keep the team focused on agreed deliverables and outcomes.</p>
+          <div class="tag-row"><span class="tag">Project planning</span><span class="tag">Stakeholder communication</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Girls' Program Project Planning Contributor</h3><div class="org">Delight Makers Foundation</div></div><span class="chip chip-current">2026 – present</span></div>
+        <p class="summary">Planning support for girls' empowerment programs.</p>
+        <div class="peek"><p>Binti na Uongozi and Muongezee Binti Ujasiri.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Support project planning for girls' empowerment programs, including Binti na Uongozi and Muongezee Binti Ujasiri.</p>
+          <p>I contribute to activity design, scheduling, coordination requirements and the expected outcomes for participating girls.</p>
+          <div class="tag-row"><span class="tag">Girls' empowerment</span><span class="tag">Program design</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Outreach Officer, Digital Entrepreneurship Platform for Children</h3><div class="org">Faunda.AI</div></div><span class="chip chip-current">2026 – present</span></div>
+        <p class="summary">Promoting a digital entrepreneurship platform for children.</p>
+        <div class="peek"><p>Engaging schools, educators, parents and prospective partners.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Promote a digital entrepreneurship platform that introduces children to innovation, business thinking and technology-enabled opportunities.</p>
+          <p>I engage schools, educators, parents and prospective partners to expand awareness, participation and program reach.</p>
+          <div class="tag-row"><span class="tag">Outreach</span><span class="tag">Digital entrepreneurship</span><span class="tag">Partnerships</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Supervisor and Trainer; Train-the-Trainers Facilitator</h3><div class="org">Smart Girls in ICT / Girls in ICT Digital Inclusion Programs</div></div><span class="chip chip-current">2022 – present</span></div>
+        <p class="summary">Training girls and young learners in ICT and digital skills.</p>
+        <div class="peek"><p>Facilitated train-the-trainers activities under TCRA Digital Inclusion in 2025.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Supervise and train girls and young learners in ICT, digital skills, safe technology use and innovation mindsets.</p>
+          <p>In 2025 I facilitated train-the-trainers activities for Girls in ICT digital inclusion initiatives under TCRA, promoting confidence, inclusion and practical technology exposure among girls and underserved learners.</p>
+          <div class="tag-row"><span class="tag">ICT training</span><span class="tag">TCRA digital inclusion</span><span class="tag">Safe technology use</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>School Data Analyst, English Teacher, STEM Supervisor</h3><div class="org">Kijitonyama Sayansi Secondary School</div></div><span class="chip chip-current">2020 – present</span></div>
+        <p class="summary">Managing school data and supporting English and STEM learning.</p>
+        <div class="peek"><p>Also School Plans Teacher, and Extracurricular and Practical Skills Teacher.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Manage school data, learner records, internal reports and the evidence used for planning and decision-making.</p>
+          <p>I teach English and support STEM learning, school planning, practical skills and learner development activities. I also coordinate extracurricular activities that strengthen creativity, confidence and learner participation.</p>
+          <div class="tag-row"><span class="tag">School data</span><span class="tag">English</span><span class="tag">STEM</span><span class="tag">Extracurricular</span></div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Deputy Head of School</h3><div class="org">Kijitonyama Sayansi Secondary School</div></div><span class="chip chip-past">2020 – 2025</span></div>
+        <p class="summary">Supported school leadership and daily operations.</p>
+        <div class="peek"><p>Discipline, academic coordination, staff coordination and learner supervision.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Supported school leadership, discipline, academic coordination and daily institutional operations.</p>
+          <p>I worked with management to improve staff coordination, learner supervision, communication and academic routines.</p>
+          <div class="tag-row"><span class="tag">School leadership</span><span class="tag">Academic coordination</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="sub-label">Earlier experience</div>
+    <div class="grid-3">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Marker</h3><div class="org">National Examinations Council of Tanzania (NECTA)</div></div><span class="chip chip-past">2023</span></div>
+        <p class="summary">National examination marking.</p>
+        <div class="peek"><p>Fairness, accuracy and assessment standards.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Participated in national examination marking with attention to fairness, accuracy and assessment standards.</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>ICT Teacher and English Teacher</h3><div class="org">Kidudwe Primary School</div></div><span class="chip chip-past">2019 – 2020</span></div>
+        <p class="summary">Foundational digital and communication skills.</p>
+        <div class="peek"><p>Taught ICT and English to primary school learners.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Taught ICT and English to primary school learners, supporting foundational digital and communication skills.</p>
+          <p>I prepared lessons, supported assessment and encouraged practical use of technology in learning.</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Accounting Teacher and English Teacher</h3><div class="org">Nassor Seif Secondary School</div></div><span class="chip chip-past">2013 – 2019</span></div>
+        <p class="summary">Accounting and English for secondary learners.</p>
+        <div class="peek"><p>Lesson plans, classroom assessments and learner support.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Delivered Accounting and English instruction to secondary school learners.</p>
+          <p>I prepared lesson plans, classroom assessments and learner support activities to improve academic outcomes.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== TRAINING ===================== -->
+  <section id="training">
+    <h2 class="section-title">Always building capacity</h2>
+    <p class="section-hint">Hover for a quick look. Click a card for the full details.</p>
+    <div class="grid-3">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>AI for Good Training</h3><div class="org">AI Community</div></div><span class="chip chip-when">2026</span></div>
+        <p class="summary">Responsible AI for education and community.</p>
+        <div class="peek"><p>Training participant exploring AI for social good.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Training Participant. Gained exposure to responsible use of artificial intelligence for education, social good and community development.</p>
+          <p>Strengthened the ability to connect emerging technologies with teaching, innovation and institutional improvement.</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>ICT SEQUIP Training for Teachers</h3><div class="org">Teacher Trainer</div></div><span class="chip chip-when">2025</span></div>
+        <p class="summary">Helping teachers adopt digital tools.</p>
+        <div class="peek"><p>Facilitated ICT capacity-building sessions.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Facilitated ICT capacity-building sessions to improve teachers' adoption of digital tools in classroom practice.</p>
+          <p>Supported practical ICT use for lesson delivery, communication and learning management.</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Technology Integration Skills for Teachers</h3><div class="org">TENMET</div></div><span class="chip chip-when">2025</span></div>
+        <p class="summary">Integrating technology into teaching.</p>
+        <div class="peek"><p>Training participant and teacher capacity building.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Training Participant / Teacher Capacity Building.</p>
+          <p>Strengthened professional capacity in integrating technology into teaching, classroom management and learner engagement.</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Digital Literacy for Teachers</h3><div class="org">TEDI Tanzania</div></div><span class="chip chip-when">2024 – 2025</span></div>
+        <p class="summary">Practical digital literacy for teaching.</p>
+        <div class="peek"><p>Online resources, communication and classroom support.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Training Participant / Digital Literacy Development.</p>
+          <p>Developed practical digital literacy for professional teaching, online resources, communication and classroom support.</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Digital Skills Program for Teachers</h3><div class="org">Interactive Digital Tools for Teaching</div></div></div>
+        <p class="summary">Interactive tools for lesson delivery.</p>
+        <div class="peek"><p>Practical training on learner engagement and participation.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <p>Training Participant. Completed practical training on using interactive digital tools to improve lesson delivery, learner engagement and classroom participation.</p>
+          <p>Strengthened the ability to select and apply digital resources for effective, modern teaching practice.</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Professional Competitions</h3><div class="org">Digital Teaching and E-ICON</div></div><span class="chip chip-when">2024 &amp; 2026</span></div>
+        <p class="summary">Participant in two innovation competitions.</p>
+        <div class="peek"><p>Digital Teaching Competition for Teachers (2026) and E-ICON (2024).</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <h4>Digital Teaching Competition for Teachers, 2026</h4>
+          <p>Participant. Took part in a professional competition focused on digital teaching practices and effective classroom use of technology, strengthening exposure to innovative, learner-centred approaches supported by digital tools.</p>
+          <h4>E-ICON Competition, 2024</h4>
+          <p>Participant. Gained further exposure to innovation, technology and solution-oriented thinking.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education">
+    <h2 class="section-title">Foundations and service</h2>
+    <p class="section-hint">Hover for a quick look. Click a card for the full details.</p>
+    <div class="grid-2">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Bachelor Degree in Language and Management</h3><div class="org">Mzumbe University</div></div><span class="chip chip-when">2009 – 2012</span></div>
+        <p class="summary">University degree.</p>
+        <div class="peek"><p>Completed at Mzumbe University between 2009 and 2012.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <ul>
+            <li><strong>Qualification:</strong> Bachelor Degree in Language and Management</li>
+            <li><strong>Institution:</strong> Mzumbe University</li>
+            <li><strong>Years:</strong> 2009 – 2012</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Secondary and Primary Education</h3><div class="org">Thaqaafa, Usagara and Darajani</div></div></div>
+        <p class="summary">Advanced, ordinary secondary and primary certificates.</p>
+        <div class="peek"><p>Three certificates from 1995 to 2009.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <ul>
+            <li><strong>Advanced Certificate of Secondary Education</strong>, Thaqaafa High School (2007 – 2009)</li>
+            <li><strong>Certificate of Secondary Education</strong>, Usagara Secondary School (2002 – 2005)</li>
+            <li><strong>Certificate of Primary Education</strong>, Darajani English Medium School (1995 – 2001)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Certifications and Public Service</h3><div class="org">Awards and participation</div></div></div>
+        <p class="summary">Training certificates and national service.</p>
+        <div class="peek"><p>Africa Code Week, Computer Application Course, PCCB, PPF seminar, voter register, census and NEST.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <ul>
+            <li>Certificate of participation in <strong>Africa Code Week</strong>, Train-the-Trainer Program</li>
+            <li>Certificate of appreciation as a member of the <strong>Prevention and Combating of Corruption Bureau (PCCB)</strong></li>
+            <li>Certificate of attendance: <strong>Seminar on Social Security and PPF Operations</strong></li>
+            <li>Certificate of successful completion: <strong>Computer Application Course</strong></li>
+            <li>Participation in the <strong>Permanent Register of Voters</strong>, 2019</li>
+            <li>Participation in the <strong>Tanzania National Census</strong>, 2022</li>
+            <li>Participation in <strong>NEST Training</strong>, 2023</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog">
+        <div class="card-top"><div><h3>Languages and Practical Skills</h3><div class="org">English and Swahili</div></div></div>
+        <p class="summary">Working languages and interests.</p>
+        <div class="peek"><p>Professional English, native Swahili, art and crafts, writing, design and swimming.</p><span class="more">Click for full details</span></div>
+        <div class="full" hidden>
+          <ul>
+            <li><strong>English:</strong> professional working proficiency developed through academic study, teaching and workplace communication.</li>
+            <li><strong>Swahili:</strong> native speaker with a strong ability to communicate, train and support learners and communities.</li>
+            <li><strong>Interests and skills:</strong> art and crafts, article writing, design, digital skills development and swimming.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== DOCUMENTARY ===================== -->
+  <section id="documentary">
+    <h2 class="section-title">Experience in pictures and video</h2>
+    <p class="section-hint">Photos and videos from programs, trainings and school work. Click one to open it.</p>
+    <div id="gallery-grid" class="gallery-grid"></div>
+  </section>
+
+
+</main>
+
+<footer id="contact">
+  <div class="scene" aria-hidden="true"><svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+<defs>
+  <g id="acacia"><path d="M-4,0 L-3,-34 Q-4,-48 -22,-58 L-18,-62 Q-2,-54 0,-44 Q2,-54 18,-62 L22,-58 Q4,-48 3,-34 L4,0Z"/><ellipse cx="0" cy="-70" rx="44" ry="10"/><ellipse cx="-26" cy="-64" rx="24" ry="7"/><ellipse cx="28" cy="-65" rx="26" ry="7"/><ellipse cx="2" cy="-76" rx="26" ry="6"/></g>
+  <g id="baobab"><path d="M-16,0 C-14,-24 -24,-52 -20,-78 L20,-78 C24,-52 14,-24 16,0Z"/><path d="M-18,-76 L-40,-104 M-8,-78 L-16,-114 M6,-78 L12,-116 M18,-76 L40,-102" stroke-width="6" stroke-linecap="round" fill="none"/><circle cx="-42" cy="-108" r="12"/><circle cx="-18" cy="-120" r="13"/><circle cx="14" cy="-122" r="13"/><circle cx="42" cy="-106" r="12"/></g>
+</defs>
+<path d="M0,250 L90,205 L170,232 L280,160 L380,222 L470,192 L560,240 L660,140 L760,215 L860,178 L960,235 L1070,150 L1170,222 L1260,188 L1350,230 L1440,205 L1440,560 L0,560Z" fill="#35607a" fill-opacity=".6" stroke="#35607a" stroke-opacity=".6" stroke-width="3" stroke-linejoin="round"/>
+<path d="M0,300 L120,262 L230,288 L340,236 L450,282 L560,252 L650,300 L725,215 L800,205 L880,215 L955,292 L1060,248 L1170,290 L1290,260 L1440,300 L1440,560 L0,560Z" fill="#2b5a66" stroke="#2b5a66" stroke-width="3" stroke-linejoin="round"/>
+<path d="M0,330 C180,300 320,352 520,326 C720,300 880,352 1080,322 C1250,300 1360,332 1440,318 L1440,560 L0,560Z" fill="#1c4a44"/>
+<use href="#acacia" transform="translate(120,340) scale(0.7)" fill="#153c37" stroke="#153c37"/><use href="#acacia" transform="translate(330,346) scale(0.62)" fill="#153c37" stroke="#153c37"/><use href="#baobab" transform="translate(470,350) scale(1.0)" fill="#153c37" stroke="#153c37"/><use href="#acacia" transform="translate(690,340) scale(0.66)" fill="#153c37" stroke="#153c37"/><use href="#acacia" transform="translate(900,344) scale(0.72)" fill="#153c37" stroke="#153c37"/><use href="#acacia" transform="translate(1210,336) scale(0.68)" fill="#153c37" stroke="#153c37"/>
+<path d="M0,372 C240,350 480,388 720,370 C960,352 1200,388 1440,366 L1440,560 L0,560Z" fill="#0f302c"/>
+<use href="#acacia" transform="translate(60,392) scale(1.15)" fill="#0b2421" stroke="#0b2421"/><use href="#acacia" transform="translate(250,396) scale(0.9)" fill="#0b2421" stroke="#0b2421"/><use href="#acacia" transform="translate(770,392) scale(1.0)" fill="#0b2421" stroke="#0b2421"/><use href="#baobab" transform="translate(1040,398) scale(1.45)" fill="#0b2421" stroke="#0b2421"/><use href="#acacia" transform="translate(1340,390) scale(1.25)" fill="#0b2421" stroke="#0b2421"/>
+<path d="M0,430 C300,415 600,445 900,428 C1150,414 1300,440 1440,426 L1440,560 L0,560Z" fill="#08201d"/>
+<g fill="none" stroke="#cfe2e8" stroke-opacity=".7" stroke-width="2" stroke-linecap="round">
+  <path d="M840,120 q8,-8 16,0 q8,-8 16,0"/><path d="M900,92 q6,-6 12,0 q6,-6 12,0"/><path d="M968,128 q5,-5 10,0 q5,-5 10,0"/><path d="M360,110 q6,-6 12,0 q6,-6 12,0"/>
+</g>
+</svg></div>
+  <div class="footer-shade" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div class="fcol">
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#focus">Focus areas</a>
+        <a href="#experience">Experience</a>
+      </div>
+      <div class="fcol">
+        <h4>Learn more</h4>
+        <a href="#training">Training</a>
+        <a href="#education">Education</a>
+        <a href="#documentary">Documentary</a>
+      </div>
+      <div class="fcol">
+        <h4>Get in touch</h4>
+        <a href="mailto:butengerukia123@gmail.com">Send an email</a>
+        <a href="tel:+255675694547">Call Rukia</a>
+        <a href="tel:+255781363966">Call (second line)</a>
+      </div>
+      <div class="social">
+        <a href="mailto:butengerukia123@gmail.com" aria-label="Email Rukia"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="tel:+255675694547" aria-label="Call Rukia"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+        <a href="#top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+      <div class="fcontact">
+        <strong>Rukia Ramadhani Butenge</strong>
+        <span>Dar es Salaam, Tanzania</span>
+        <a href="tel:+255675694547">+255 675 694 547 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+        <a href="tel:+255781363966">+255 781 363 966 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+        <a href="mailto:butengerukia123@gmail.com">butengerukia123@gmail.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="wordmark">Rukia Butenge</span>
+      <a href="#top">Back to top</a>
+      <span>© 2026 Rukia Ramadhani Butenge. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Detail pop-up -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <button class="modal-close" id="modalClose" type="button">Close ✕</button>
+    <div class="modal-head" id="modalHead"></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Full-screen photo and video viewer -->
+<div class="viewer" id="viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <div class="viewer-top">
+    <button class="v-btn" id="vFull" type="button">Full screen</button>
+    <button class="v-btn" id="vClose" type="button">Close ✕</button>
+  </div>
+  <button class="v-nav v-prev" id="vPrev" type="button" aria-label="Previous">‹</button>
+  <div class="viewer-stage" id="vStage"></div>
+  <button class="v-nav v-next" id="vNext" type="button" aria-label="Next">›</button>
+  <div class="viewer-cap"><span id="vCap"></span><small id="vCount"></small></div>
+</div>
+
+<script>
+  /* =====================================================================
+     PROFILE PICTURE
+     Upload a photo named exactly  rukia.jpg  into the  assets  folder
+     (GitHub → assets → Add file → Upload files). It appears in the top
+     bar and in the intro. Until then, the initials "RB" are shown.
+
+     TOP PHOTO WALL (the photos at the top of the page)
+     Upload up to 6 photos into  assets/hero/  named:
+        photo-1.jpg  photo-2.jpg  photo-3.jpg  photo-4.jpg  photo-5.jpg  photo-6.jpg
+     No code change needed. Empty slots show a soft placeholder.
+     To use different file names or add captions, edit HERO_PHOTOS below.
+     Click any photo to open it full screen (arrow keys or swipe to browse).
+
+     DOCUMENTARY GALLERY (photos and videos, near the bottom)
+     1. Upload files to  assets/gallery/
+     2. Add ONE line to GALLERY_ITEMS for each file:
+        image:   { type: 'image', src: 'assets/gallery/file.jpg', caption: '...' }
+        video:   { type: 'video', src: 'assets/gallery/file.mp4', caption: '...' }
+        YouTube: { type: 'youtube', id: 'VIDEO_ID', caption: '...' }
+     GitHub's web upload limit is 25 MB per file. For longer videos, upload
+     to YouTube (unlisted is fine) and use the 'youtube' type.
+     ===================================================================== */
+  const HERO_PHOTOS = [
+    { src: 'assets/hero/photo-1.jpg', caption: '' },
+    { src: 'assets/hero/photo-2.jpg', caption: '' },
+    { src: 'assets/hero/photo-3.jpg', caption: '' },
+    { src: 'assets/hero/photo-4.jpg', caption: '' },
+    { src: 'assets/hero/photo-5.jpg', caption: '' },
+    { src: 'assets/hero/photo-6.jpg', caption: '' },
+  ];
+
+  const GALLERY_ITEMS = [
+    // { type: 'image',   src: 'assets/gallery/girls-in-ict-01.jpg', caption: 'Girls in ICT training session' },
+    // { type: 'video',   src: 'assets/gallery/school-activity.mp4', caption: 'School STEM activity' },
+    // { type: 'youtube', id: 'VIDEO_ID', caption: 'Program documentary' },
+  ];
+
+  /* ---------- Detail pop-up (cards) ---------- */
+  const modal = document.getElementById('modal');
+  const modalCard = modal.querySelector('.modal-card');
+  const modalHead = document.getElementById('modalHead');
+  const modalBody = document.getElementById('modalBody');
+  const modalClose = document.getElementById('modalClose');
+  let lastFocus = null;
+
+  function openModal(card) {
+    lastFocus = document.activeElement;
+    modalHead.innerHTML = '';
+    const h2 = document.createElement('h2');
+    h2.id = 'modalTitle';
+    h2.textContent = card.querySelector('h3').textContent;
+    modalHead.appendChild(h2);
+    const org = card.querySelector('.org');
+    if (org) { const o = document.createElement('div'); o.className = 'org'; o.textContent = org.textContent; modalHead.appendChild(o); }
+    const chip = card.querySelector('.chip');
+    if (chip) modalHead.appendChild(chip.cloneNode(true));
+    modalBody.innerHTML = card.querySelector('.full').innerHTML;
+    modalCard.scrollTop = 0;
+    modalCard.style.animation = 'none';
+    void modalCard.offsetWidth;
+    modalCard.style.animation = '';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('locked');
+    modalClose.focus();
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('locked');
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+    });
+  });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  modal.addEventListener('keydown', (e) => { if (e.key === 'Tab') { e.preventDefault(); modalClose.focus(); } });
+
+  /* ---------- Full-screen viewer ---------- */
+  const viewer = document.getElementById('viewer');
+  const vStage = document.getElementById('vStage');
+  const vCap = document.getElementById('vCap');
+  const vCount = document.getElementById('vCount');
+  const vPrev = document.getElementById('vPrev');
+  const vNext = document.getElementById('vNext');
+  const vClose = document.getElementById('vClose');
+  const vFull = document.getElementById('vFull');
+  let vItems = [], vIndex = 0, viewerFocus = null;
+
+  function renderViewer() {
+    const it = vItems[vIndex];
+    if (it.type === 'video') {
+      vStage.innerHTML = `<video src="${it.src}" controls autoplay playsinline></video>`;
+    } else if (it.type === 'youtube') {
+      vStage.innerHTML = `<iframe src="https://www.youtube.com/embed/${it.id}?autoplay=1" title="${it.caption || 'Video'}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    } else {
+      vStage.innerHTML = `<img src="${it.src}" alt="${it.caption || ''}">`;
+    }
+    vCap.textContent = it.caption || '';
+    vCount.textContent = vItems.length > 1 ? `${vIndex + 1} of ${vItems.length}` : '';
+    const multi = vItems.length > 1;
+    vPrev.style.display = multi ? '' : 'none';
+    vNext.style.display = multi ? '' : 'none';
+  }
+  function openViewer(items, index) {
+    vItems = items; vIndex = index;
+    viewerFocus = document.activeElement;
+    renderViewer();
+    viewer.classList.add('open');
+    viewer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('locked');
+    vClose.focus();
+  }
+  function closeViewer() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    viewer.classList.remove('open');
+    viewer.setAttribute('aria-hidden', 'true');
+    vStage.innerHTML = '';
+    document.body.classList.remove('locked');
+    if (viewerFocus) viewerFocus.focus();
+  }
+  function stepViewer(d) {
+    if (vItems.length < 2) return;
+    vIndex = (vIndex + d + vItems.length) % vItems.length;
+    renderViewer();
+  }
+  vClose.addEventListener('click', closeViewer);
+  vPrev.addEventListener('click', () => stepViewer(-1));
+  vNext.addEventListener('click', () => stepViewer(1));
+  vFull.addEventListener('click', () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (viewer.requestFullscreen) viewer.requestFullscreen();
+  });
+  viewer.addEventListener('click', (e) => { if (e.target === viewer || e.target === vStage) closeViewer(); });
+  let touchX = null;
+  viewer.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  viewer.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) stepViewer(dx < 0 ? 1 : -1);
+    touchX = null;
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (viewer.classList.contains('open')) {
+      if (e.key === 'Escape') closeViewer();
+      else if (e.key === 'ArrowRight') stepViewer(1);
+      else if (e.key === 'ArrowLeft') stepViewer(-1);
+    } else if (modal.classList.contains('open') && e.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+  /* ---------- Top photo wall ---------- */
+  const wall = document.getElementById('photoWall');
+  HERO_PHOTOS.forEach((p, i) => {
+    const tile = document.createElement('button');
+    tile.type = 'button';
+    tile.className = 'wall-tile empty';
+    tile.setAttribute('aria-label', p.caption || `Open photo ${i + 1} full screen`);
+    tile.innerHTML = '<span class="ph"><b>+</b>Photo</span>';
+    tile._src = p.src; tile._cap = p.caption || '';
+    const img = new Image();
+    img.alt = p.caption || '';
+    img.decoding = 'async';
+    img.onload = () => {
+      tile.classList.remove('empty');
+      const ph = tile.querySelector('.ph'); if (ph) ph.remove();
+      tile.appendChild(img);
+      tile.dataset.ok = '1';
+    };
+    img.src = p.src;
+    tile.addEventListener('click', () => {
+      if (!tile.dataset.ok) return;
+      const ok = [...wall.querySelectorAll('.wall-tile[data-ok]')];
+      openViewer(ok.map((el) => ({ type: 'image', src: el._src, caption: el._cap })), ok.indexOf(tile));
+    });
+    wall.appendChild(tile);
+  });
+
+  /* ---------- Documentary gallery ---------- */
+  const grid = document.getElementById('gallery-grid');
+  if (GALLERY_ITEMS.length === 0) {
+    ['Photo', 'Video', 'Photo'].forEach((label) => {
+      const ph = document.createElement('div');
+      ph.className = 'gallery-item placeholder';
+      ph.innerHTML = `<b>+</b><span>${label} from Rukia's work will appear here</span>`;
+      grid.appendChild(ph);
+    });
+  } else {
+    GALLERY_ITEMS.forEach((item, i) => {
+      const el = document.createElement('div');
+      el.className = 'gallery-item';
+      el.tabIndex = 0;
+      el.setAttribute('role', 'button');
+      const cap = `<div class="cap">${item.caption || ''}</div>`;
+      if (item.type === 'video') {
+        el.innerHTML = `<video src="${item.src}" muted loop playsinline preload="metadata"></video><span class="kind">video</span>${cap}`;
+        el.addEventListener('mouseenter', () => el.querySelector('video').play());
+        el.addEventListener('mouseleave', () => el.querySelector('video').pause());
+      } else if (item.type === 'youtube') {
+        el.innerHTML = `<img src="https://img.youtube.com/vi/${item.id}/hqdefault.jpg" alt="${item.caption || ''}" loading="lazy"><span class="kind">video</span>${cap}`;
+      } else {
+        el.innerHTML = `<img src="${item.src}" alt="${item.caption || ''}" loading="lazy">${cap}`;
+      }
+      el.addEventListener('click', () => openViewer(GALLERY_ITEMS, i));
+      el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openViewer(GALLERY_ITEMS, i); } });
+      grid.appendChild(el);
+    });
+  }
+</script>
+
+</body>
+</html>
