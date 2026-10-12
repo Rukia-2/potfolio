@@ -139,10 +139,10 @@
   }
   .wall-tile .ph b { font-family: var(--serif); font-weight: 400; font-size: 1.8rem; color: var(--amber); line-height: 1; }
   @media (max-width: 760px) {
-   .photo-wall { overflow-x: auto; overscroll-behavior-x: contain; height: 270px; scrollbar-width: none; }
+    .photo-wall { overflow-x: auto; overscroll-behavior-x: contain; height: 270px; scrollbar-width: none; }
     .photo-wall::-webkit-scrollbar { display: none; }
     .wall-tile { flex: 0 0 150px; }
-    .wall-tile.clone { display: block; }}
+    .wall-tile.clone { display: block; }
     .wall-tile:nth-child(n) { height: 220px; }
     .wall-tile:nth-child(odd) { height: 260px; }
   }
@@ -150,7 +150,7 @@
   .hero-content {
     max-width: 920px; margin: -36px auto 0; padding: 0 28px;
     position: relative; z-index: 3;
-    display: grid; grid-template-columns: 1fr; gap: 26px; justify-items: center; text-align: center;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
     animation: rise .9s cubic-bezier(.2,.8,.2,1) both;
   }
   @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -161,8 +161,8 @@
   .hero-role { color: var(--teal); font-size: 1.02rem; font-weight: 600; margin-bottom: 8px; }
   .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 12px; }
   .tagline { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(1.15rem, 2.4vw, 1.5rem); color: var(--amber); margin-bottom: 18px; }
-  .lede { max-width: 58ch; color: var(--text-dim); font-size: 1.05rem; margin: 0 auto 26px; }
-  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .lede { max-width: 58ch; color: var(--text-dim); font-size: 1.05rem; margin-bottom: 26px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn {
     font-size: 0.95rem; font-weight: 700;
     padding: 12px 24px; border-radius: 999px;
@@ -868,7 +868,7 @@
     { type: 'image',   src: 'assets/gallery/doc-1.jpg', caption: 'Girls after ICT training session' },
     { type: 'image',   src: 'assets/gallery/doc-2.jpg', caption: 'Girls Doing community cleanliness' },
     { type: 'image',   src: 'assets/gallery/doc-3.jpg', caption: 'Madam in teaching lessons in class' },
-    { type: 'image',   src: 'assets/gallery/doc-4.jpg', caption: 'Group picture of Gilrs at Kijitonyama sec' },
+    { type: 'image',   src: 'assets/gallery/doc-4.jpg', caption: 'Group picture of Girls at Kijitonyama sec' },
     { type: 'image',   src: 'assets/gallery/doc-5.jpg', caption: 'Madam Rukia with event members' },
     { type: 'image',   src: 'assets/gallery/doc-6.jpg', caption: 'Girls in ICT class learning' },
     // { type: 'video',   src: 'assets/gallery/school-activity.mp4', caption: 'School STEM activity' },
@@ -1014,7 +1014,7 @@
       tile.appendChild(img);
       tile.dataset.ok = '1';
     };
-   heroLoads.push(new Promise((res) => { img.addEventListener('load', res); img.addEventListener('error', res); }));
+    heroLoads.push(new Promise((res) => { img.addEventListener('load', res); img.addEventListener('error', res); }));
     img.src = p.src;
     tile.addEventListener('click', () => {
       if (!tile.dataset.ok) return;
@@ -1023,8 +1023,11 @@
     });
     wall.appendChild(tile);
   });
-  
-  /* ---------- Auto-scroll the photo row on phones ---------- */
+
+  /* ---------- Auto-scroll the photo row on phones ----------
+     On a phone the row drifts sideways by itself and loops forever, so every
+     photo gets seen. Touching the row pauses it; it resumes 3 seconds after
+     the finger lifts. It stays still for visitors who prefer reduced motion. */
   (function () {
     const phone = window.matchMedia('(max-width: 760px)');
     const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -1064,7 +1067,7 @@
       requestAnimationFrame(frame);
     });
   })();
-  
+
   /* ---------- Documentary gallery ---------- */
   const grid = document.getElementById('gallery-grid');
   if (GALLERY_ITEMS.length === 0) {
