@@ -997,6 +997,7 @@
 
   /* ---------- Top photo wall ---------- */
   const wall = document.getElementById('photoWall');
+  const heroLoads = [];
   HERO_PHOTOS.forEach((p, i) => {
     const tile = document.createElement('button');
     tile.type = 'button';
@@ -1013,6 +1014,7 @@
       tile.appendChild(img);
       tile.dataset.ok = '1';
     };
+   heroLoads.push(new Promise((res) => { img.addEventListener('load', res); img.addEventListener('error', res); }));
     img.src = p.src;
     tile.addEventListener('click', () => {
       if (!tile.dataset.ok) return;
@@ -1021,7 +1023,48 @@
     });
     wall.appendChild(tile);
   });
-
+  
+  /* ---------- Auto-scroll the photo row on phones ---------- */
+  (function () {
+    const phone = window.matchMedia('(max-width: 760px)');
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const SPEED = 32; // pixels per second; raise for faster, lower for slower
+    Promise.all(heroLoads).then(() => {
+      const originals = [...wall.querySelectorAll('.wall-tile')];
+      if (originals.filter((t) => t.dataset.ok).length < 2) return;
+      const clones = originals.map((t) => {
+        const c = t.cloneNode(true);
+        c.classList.add('clone');
+        delete c.dataset.ok;
+        c.tabIndex = -1;
+        c.setAttribute('aria-hidden', 'true');
+        c.addEventListener('click', () => t.click());
+        wall.appendChild(c);
+        return c;
+      });
+      let pos = wall.scrollLeft, last = null, holdUntil = 0, touching = false, resync = false;
+      const release = () => { touching = false; holdUntil = performance.now() + 3000; resync = true; };
+      wall.addEventListener('touchstart', () => { touching = true; }, { passive: true });
+      wall.addEventListener('touchend', release, { passive: true });
+      wall.addEventListener('touchcancel', release, { passive: true });
+      function frame(now) {
+        const dt = last === null ? 0 : Math.min((now - last) / 1000, 0.1);
+        last = now;
+        const idle = phone.matches && !calm.matches && !touching && !document.hidden &&
+                     !document.body.classList.contains('locked') && now >= holdUntil;
+        if (idle) {
+          if (resync) { pos = wall.scrollLeft; resync = false; }
+          const loopW = clones[0].offsetLeft - originals[0].offsetLeft;
+          pos += SPEED * dt;
+          if (loopW > 0 && pos >= loopW) pos -= loopW;
+          wall.scrollLeft = pos;
+        }
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    });
+  })();
+  
   /* ---------- Documentary gallery ---------- */
   const grid = document.getElementById('gallery-grid');
   if (GALLERY_ITEMS.length === 0) {
