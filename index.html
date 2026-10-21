@@ -287,7 +287,15 @@
     text-align: center; padding: 22px; color: var(--text-faint); font-size: 0.92rem;
   }
   .gallery-item.placeholder b { font-family: var(--serif); font-weight: 400; font-size: 2rem; color: var(--amber); line-height: 1; }
-
+  
+  /* ---------- Photo bundles (like an Instagram carousel post) ---------- */
+  .gallery-item .kind.album { display: inline-flex; align-items: center; gap: 5px; color: #fff; padding: 4px 10px; }
+  .gallery-item img.slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease, transform .4s ease; }
+  .gallery-item img.slide.on { opacity: 1; }
+  .v-dots { display: flex; justify-content: center; gap: 6px; margin-bottom: 10px; min-height: 8px; }
+  .v-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.3); transition: background .2s ease, transform .2s ease; }
+  .v-dots i.on { background: var(--amber); transform: scale(1.25); }
+  
   /* ---------- Full-screen viewer ---------- */
   .viewer {
     display: none; position: fixed; inset: 0; z-index: 200;
@@ -823,13 +831,14 @@
 <!-- Full-screen photo and video viewer -->
 <div class="viewer" id="viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Media viewer">
   <div class="viewer-top">
+        <button class="v-btn" id="vPlay" type="button">Pause</button>
     <button class="v-btn" id="vFull" type="button">Full screen</button>
     <button class="v-btn" id="vClose" type="button">Close ✕</button>
   </div>
   <button class="v-nav v-prev" id="vPrev" type="button" aria-label="Previous">‹</button>
   <div class="viewer-stage" id="vStage"></div>
   <button class="v-nav v-next" id="vNext" type="button" aria-label="Next">›</button>
-  <div class="viewer-cap"><span id="vCap"></span><small id="vCount"></small></div>
+  <div class="viewer-cap"><div class="v-dots" id="vDots"></div><span id="vCap"></span><small id="vCount"></small></div>
 </div>
 
 <script>
@@ -869,7 +878,10 @@
     { type: 'image',   src: 'assets/gallery/doc-2.jpg', caption: 'Girls Doing community cleanliness' },
     { type: 'video',   src: 'assets/gallery/Tanzania Unicef.mp4', caption: 'Tanaznia & Unicef cooperation, Received guests from canada for programs of environmental and health awareness and intoduction of Period track app for girls-2025' },
     { type: 'image',   src: 'assets/gallery/doc-3.jpg', caption: 'Madam in teaching lessons in class' },
-    { type: 'album', caption: 'Sheila and Angel presenting their projects before head of programs of Airtel Africa Foundation',
+    { type: 'image',   src: 'assets/gallery/doc-4.jpg', caption: 'Supervision on Sherise Foundation launch, For empowering Girls and raise their voices against girls right and gender equality' },
+    { type: 'image',   src: 'assets/gallery/doc-5.jpg', caption: 'International Day of the Deaf' },
+    { type: 'image',   src: 'assets/gallery/doc-6.jpg', caption: 'Career in Technology for empowering a girl Child' },
+      { type: 'album', caption: 'Sheila and Angel presenting their projects before head of programs of Airtel Africa Foundation',
       images: [
         { src: 'assets/gallery/Sheila-1.jpg' },
         { src: 'assets/gallery/Sheila-2.jpg' },
@@ -878,10 +890,6 @@
         { src: 'assets/gallery/Sheila-5.jpg' },
         { src: 'assets/gallery/Sheila-6.jpg' },
       ] },
-    { type: 'image',   src: 'assets/gallery/doc-4.jpg', caption: 'Supervision on Sherise Foundation launch, For empowering Girls and raise their voices against girls right and gender equality' },
-    { type: 'image',   src: 'assets/gallery/doc-5.jpg', caption: 'International Day of the Deaf' },
-    { type: 'image',   src: 'assets/gallery/doc-6.jpg', caption: 'Career in Technology for empowering a girl Child' },
-     
     // { type: 'youtube', id: 'VIDEO_ID', caption: 'Program documentary' },
   ];
 
@@ -939,7 +947,21 @@
   const vNext = document.getElementById('vNext');
   const vClose = document.getElementById('vClose');
   const vFull = document.getElementById('vFull');
-  let vItems = [], vIndex = 0, viewerFocus = null;
+  let vItems = [], vIndex = 0, viewerFocus = null, vShowDots = false;
+  const vDots = document.getElementById('vDots');
+  const vPlay = document.getElementById('vPlay');
+  let vTimer = null;
+  function startShow() {
+    clearInterval(vTimer);
+    vTimer = setInterval(() => stepViewer(1), 4000);
+    vPlay.textContent = 'Pause';
+  }
+  function stopShow() {
+    clearInterval(vTimer);
+    vTimer = null;
+    vPlay.textContent = 'Play slideshow';
+  }
+  vPlay.addEventListener('click', () => { if (vTimer) stopShow(); else startShow(); });
 
   function renderViewer() {
     const it = vItems[vIndex];
@@ -952,12 +974,17 @@
     }
     vCap.textContent = it.caption || '';
     vCount.textContent = vItems.length > 1 ? `${vIndex + 1} of ${vItems.length}` : '';
+    vDots.innerHTML = vShowDots && vItems.length > 1
+      ? vItems.map((_, n) => `<i class="${n === vIndex ? 'on' : ''}"></i>`).join('') : '';
     const multi = vItems.length > 1;
     vPrev.style.display = multi ? '' : 'none';
     vNext.style.display = multi ? '' : 'none';
   }
-  function openViewer(items, index) {
-    vItems = items; vIndex = index;
+    function openViewer(items, index, dots) {
+    vItems = items; vIndex = index; vShowDots = !!dots;
+    stopShow();
+    vPlay.style.display = vShowDots && items.length > 1 ? '' : 'none';
+    if (vShowDots && items.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) startShow();
     viewerFocus = document.activeElement;
     renderViewer();
     viewer.classList.add('open');
@@ -970,6 +997,7 @@
     viewer.classList.remove('open');
     viewer.setAttribute('aria-hidden', 'true');
     vStage.innerHTML = '';
+        stopShow();
     document.body.classList.remove('locked');
     if (viewerFocus) viewerFocus.focus();
   }
@@ -977,6 +1005,7 @@
     if (vItems.length < 2) return;
     vIndex = (vIndex + d + vItems.length) % vItems.length;
     renderViewer();
+        if (vTimer) startShow();
   }
   vClose.addEventListener('click', closeViewer);
   vPrev.addEventListener('click', () => stepViewer(-1));
@@ -1078,8 +1107,10 @@
     });
   })();
 
-  /* ---------- Documentary gallery ---------- */
+    /* ---------- Documentary gallery ---------- */
   const grid = document.getElementById('gallery-grid');
+  const albumIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="13" height="13" rx="2.5"/><path d="M8 20h9a3 3 0 0 0 3-3V8"/></svg>';
+  const singles = GALLERY_ITEMS.filter((x) => x.type !== 'album');
   if (GALLERY_ITEMS.length === 0) {
     ['Photo', 'Video', 'Photo'].forEach((label) => {
       const ph = document.createElement('div');
@@ -1088,23 +1119,42 @@
       grid.appendChild(ph);
     });
   } else {
-    GALLERY_ITEMS.forEach((item, i) => {
+    GALLERY_ITEMS.forEach((item) => {
       const el = document.createElement('div');
       el.className = 'gallery-item';
       el.tabIndex = 0;
       el.setAttribute('role', 'button');
       const cap = `<div class="cap">${item.caption || ''}</div>`;
-      if (item.type === 'video') {
-        el.innerHTML = `<video src="${item.src}" muted loop playsinline preload="metadata"></video><span class="kind">video</span>${cap}`;
-        el.addEventListener('mouseenter', () => el.querySelector('video').play());
-        el.addEventListener('mouseleave', () => el.querySelector('video').pause());
-      } else if (item.type === 'youtube') {
-        el.innerHTML = `<img src="https://img.youtube.com/vi/${item.id}/hqdefault.jpg" alt="${item.caption || ''}" loading="lazy"><span class="kind">video</span>${cap}`;
+      let open;
+      if (item.type === 'album') {
+        const pics = item.images.map((im) => ({ type: 'image', src: im.src, caption: im.caption || item.caption || '' }));
+        el.innerHTML = pics.map((p, n) => `<img class="slide${n === 0 ? ' on' : ''}" src="${p.src}" alt="${item.caption || ''}" loading="lazy" onerror="this.remove()">`).join('') +
+          `<span class="kind album">${albumIcon}${pics.length}</span>${cap}`;
+        open = () => openViewer(pics, 0, true);
+        if (pics.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          let n = 0;
+          const show = () => {
+            const imgs = el.querySelectorAll('img.slide');
+            if (!imgs.length) return;
+            imgs.forEach((im, k) => im.classList.toggle('on', k === n % imgs.length));
+          };
+          setTimeout(show, 1500);
+          setInterval(() => { if (!document.hidden) { n += 1; show(); } }, 3500);
+        }
       } else {
-        el.innerHTML = `<img src="${item.src}" alt="${item.caption || ''}" loading="lazy">${cap}`;
+        if (item.type === 'video') {
+          el.innerHTML = `<video src="${item.src}" muted loop playsinline preload="metadata"></video><span class="kind">video</span>${cap}`;
+          el.addEventListener('mouseenter', () => el.querySelector('video').play());
+          el.addEventListener('mouseleave', () => el.querySelector('video').pause());
+        } else if (item.type === 'youtube') {
+          el.innerHTML = `<img src="https://img.youtube.com/vi/${item.id}/hqdefault.jpg" alt="${item.caption || ''}" loading="lazy"><span class="kind">video</span>${cap}`;
+        } else {
+          el.innerHTML = `<img src="${item.src}" alt="${item.caption || ''}" loading="lazy">${cap}`;
+        }
+        open = () => openViewer(singles, singles.indexOf(item));
       }
-      el.addEventListener('click', () => openViewer(GALLERY_ITEMS, i));
-      el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openViewer(GALLERY_ITEMS, i); } });
+      el.addEventListener('click', open);
+      el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
       grid.appendChild(el);
     });
   }
